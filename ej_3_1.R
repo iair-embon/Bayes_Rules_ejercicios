@@ -1,0 +1,28 @@
+### ej 3.1 ###
+
+library(bayesrules)
+library(tidyverse)
+
+ ## a 
+
+# no tengo idea che.. jaja
+# adivino
+
+plot_beta(40,60)
+plot_beta(20,30) # este pareciera que ajusta bien
+
+## b
+plot_beta(80,20) # estos podrian ser
+# la var da mal, pruebo otra prop
+plot_beta(40,10) 
+# la var da mal, pruebo otra prop
+plot_beta(4,1)  # da Var = 0.02666667
+# pruebo otro
+plot_beta(2,0.5) # da var = 0.04571429
+# pruebo otro
+plot_beta(1,0.25) # me paso...
+
+## c
+
+
+

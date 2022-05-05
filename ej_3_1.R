@@ -8,8 +8,7 @@ library(tidyverse)
 # no tengo idea che.. jaja
 # adivino
 
-plot_beta(40,60)
-plot_beta(20,30) # este pareciera que ajusta bien
+plot_beta(10,15, mean = TRUE) 
 
 ## b
 plot_beta(80,20) # estos podrian ser
@@ -24,5 +23,7 @@ plot_beta(1,0.25) # me paso...
 
 ## c
 
+
+## D
 
 

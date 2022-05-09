@@ -22,8 +22,10 @@ plot_beta(2,0.5) # da var = 0.04571429
 plot_beta(1,0.25) # me paso...
 
 ## c
+plot_beta(80,8.888889999) # de media va bien
+plot_beta(5,(8.888889999)/16) # austo varianza
 
 
 ## D
-
+plot_beta(0.5,0.5)
 

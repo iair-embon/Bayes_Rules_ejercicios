@@ -1,4 +1,4 @@
-### ej 3.7 ###
+### ej 3.11 ###
 
 library(bayesrules)
 library(tidyverse)

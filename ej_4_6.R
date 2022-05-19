@@ -1,4 +1,4 @@
-### ej 4.5 ###
+### ej 4.6 ###
 
 library(bayesrules)
 library(tidyverse)
@@ -97,3 +97,27 @@ p4 <- ggplot(p4_posterior, aes(x = pi)) +
 library(gridExtra)
 
 grid.arrange(p1, p2, p3 ,p4, ncol=2)
+
+##################### ej 4.6 #################
+
+## exact posterior and simulated
+# 1)
+plot_beta(4,6)
+p1
+exact_mean_1 <- 4/(4+6)
+sim_mean_1 <- mean(p1_posterior$pi)
+# 2) 
+plot_beta(3.5,5)
+p2
+exact_mean_2 <- 3.5/(3.5+5)
+sim_mean_2 <- mean(p2_posterior$pi)
+# 3)
+plot_beta(6,14)
+p3
+exact_mean_3 <- 6/(6+14)
+sim_mean_3 <- mean(p3_posterior$pi)
+# 4)
+plot_beta(5,4.1)
+p4
+exact_mean_4 <- 5/(5+4.1)
+sim_mean_4 <- mean(p4_posterior$pi)

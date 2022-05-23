@@ -1,36 +1,64 @@
-### ej 4.18 ### 
+### ej 4.19 ### 
 
 library(bayesrules)
 library(tidyverse)
+library(dplyr)
 
-# pi: the probability that a user will click on the ad when shown
+# pi: the proportion of films that pass the Bechdel test
 
-prior <- plot_beta(4,3)
-
-# employee 1: y = 0 ; n = 1
-# employee 2: y = 3 ; n = 10
-# employee 3: y = 20 ; n = 100
+data(bechdel, package = "bayesrules")
 
 # a
+prior <- plot_beta(1,1)
 
-# day 1: 
-plot_beta(4,4)
-# day 2: 
-plot_beta(7,11)
-# day 3: 
-plot_beta(27,91)
+set.seed(84735)
+bechdel_1980 <- bechdel %>%
+  filter(year >= 1980)
+
+y <-sum(bechdel_1980$binary == "PASS")
+n <- nrow(bechdel_1980)
+
+plot_beta_binomial(1,1,y,n)
+summarize_beta_binomial(1,1,y,n)
 
 # b
+prior <- plot_beta(790,952)
 
-# day 1: 
-# pi has the same probability to be over or under the mean, with mean in 0.5
+set.seed(84735)
+bechdel_1990 <- bechdel %>%
+  filter(year >= 1990)
 
-# day 2: 
-# pi has a slightly bigger probability to be under the mean that over it.
+y <-sum(bechdel_1990$binary == "PASS")
+n <- nrow(bechdel_1990)
 
-# day 3: 
-# pi has plenty probability to be under the mean that over it.
+plot_beta_binomial(790,952,y,n)
+summarize_beta_binomial(790,952,y,n)
 
 # c
-plot_beta(27,91)
+prior <- plot_beta(1543,1814)
+
+set.seed(84735)
+bechdel_2000 <- bechdel %>%
+  filter(year >= 2000)
+
+y <-sum(bechdel_2000$binary == "PASS")
+n <- nrow(bechdel_2000)
+
+plot_beta_binomial(1543,1814,y,n)
+summarize_beta_binomial(1543,1814,y,n)
+
+# d
+prior <- plot_beta(1,1)
+
+y <- sum(bechdel_1980$binary == "PASS") +
+  sum(bechdel_1990$binary == "PASS") +
+  sum(bechdel_2000$binary == "PASS")
+
+n <- nrow(bechdel_1980) +
+  nrow(bechdel_1990) +
+  nrow(bechdel_2000)
+
+plot_beta_binomial(1,1,y,n)
+summarize_beta_binomial(1,1,y,n)
+
 

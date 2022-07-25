@@ -7,9 +7,9 @@ library(bayesplot)
 ### a
 
 # STEP 1: DEFINE the model
-bb_model <- "
+model_a <- "
   data {
-    int<lower = 0, upper = 20> Y;
+    int<lower = 0, upper = 12> Y;
   }
   parameters {
     real<lower = 0, upper = 1> pi;
@@ -23,9 +23,9 @@ bb_model <- "
 ### b
 
 # STEP 1: DEFINE the model
-bb_model <- "
+model_b <- "
   data {
-    int<lower = 0> Y[2];
+    int<lower = 0> Y[3];
   }
   parameters {
     real<lower = 0> pi;
@@ -39,7 +39,7 @@ bb_model <- "
 ### c 
 
 # STEP 1: DEFINE the model
-bb_model <- "
+model_c <- "
   data {
     real<lower = -15, upper = 15> Y;
   }

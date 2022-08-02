@@ -9,14 +9,14 @@ library(bayesrules)
 # STEP 1: DEFINE the model
 nn_model <- "
   data {
-    real<lower = -100, upper = 100> Y;
+    real Y[4];
   }
   parameters {
-    real<lower = -100, upper = 100> mu;
+    real mu;
   }
   model {
-    Y ~ normal (mu,1.3**2);
-    mu ~ normal (0, 1.2**2);
+    Y ~ normal (mu,1.3);
+    mu ~ normal (0, 1.2);
   }
 "
 
